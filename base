@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warehouse App Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark px-3">
+    <button class="btn btn-outline-light me-2">☰</button>
+    <span class="navbar-brand mb-0 h1">Picking Execution</span>
+    <div class="ms-auto">
+      <select class="form-select form-select-sm">
+        <option selected>DeVere Insulation Company</option>
+      </select>
+    </div>
+    <img src="https://i.imgur.com/NiKfjZL.png" height="32" class="ms-2">
+  </nav>
+
+  <!-- Filters -->
+  <div class="container py-4">
+    <div class="row g-2">
+      <div class="col-md">
+        <label class="form-label">Date</label>
+        <input type="date" class="form-control" value="2025-07-16">
+      </div>
+      <div class="col-md">
+        <label class="form-label">Truck Number</label>
+        <select class="form-select">
+          <option>3001</option>
+          <option>3010</option>
+          <option>3026</option>
+        </select>
+      </div>
+      <div class="col-md">
+        <label class="form-label">Work Order #</label>
+        <select class="form-select">
+          <option>00590712</option>
+        </select>
+      </div>
+      <div class="col-md">
+        <label class="form-label">Door</label>
+        <select class="form-select">
+          <option>Door1</option>
+          <option>Door2</option>
+        </select>
+      </div>
+      <!-- Bulk, Misc, Side, Back, and Recoup options represent storage areas -->
+      <div class="col-md">
+        <label class="form-label">Storage Location</label>
+        <select class="form-select">
+          <option>Bulk 1</option>
+          <option>Bulk 2</option>
+          <option>Bulk 3</option>
+          <option>Bulk 4</option>
+          <option>Bulk 5</option>
+          <option>Bulk 6</option>
+          <option>Back 1</option>
+          <option>Misc. 1</option>
+          <option>Misc. 2</option>
+          <option>Side 1</option>
+          <option>Side 2</option>
+          <option>Recoup 1</option>
+          <option>Recoup 2</option>
+        </select>
+      </div>
+      <div class="col-md d-flex align-items-end">
+        <button class="btn btn-primary w-100">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder for truck info and job data -->
+  <div class="container">
+    <div class="card">
+      <div class="card-header">Truck Info</div>
+      <div class="card-body">
+        <p>Truck: 3001 | Stops: 5 | Status: Loaded</p>
+        <p>Date: July 16, 2025 | Est. Labor: $379.38 / $450</p>
+        <button class="btn btn-outline-primary btn-sm">Master Pick List</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
