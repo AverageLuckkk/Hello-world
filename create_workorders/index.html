@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Work Order</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h2 class="mb-4">Create Work Order</h2>
+
+    <form id="workOrderForm">
+      <div class="mb-3">
+        <label class="form-label">Work Order #</label>
+        <input type="text" class="form-control" id="workOrderNumber" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Customer Name</label>
+        <input type="text" class="form-control" id="customerName" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Job Site Address</label>
+        <input type="text" class="form-control" id="jobAddress" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Total Cost</label>
+        <input type="number" class="form-control" id="totalCost" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Work Order</button>
+    </form>
+
+    <div class="btn-group mt-5">
+      <a href="picking-execution.html" class="btn btn-secondary">Picking Execution</a>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="returns.html">Returns</a></li>
+        <li><a class="dropdown-item" href="add-work-order.html">Add Work Order</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('workOrderForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const workOrder = {
+        number: document.getElementById('workOrderNumber').value,
+        customer: document.getElementById('customerName').value,
+        address: document.getElementById('jobAddress').value,
+        cost: document.getElementById('totalCost').value
+      };
+
+      let orders = JSON.parse(localStorage.getItem('workOrders') || '[]');
+      orders.push(workOrder);
+      localStorage.setItem('workOrders', JSON.stringify(orders));
+
+      alert('Work order saved!');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

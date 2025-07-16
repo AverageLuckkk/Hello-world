@@ -45,6 +45,12 @@
         <select class="form-select">
           <option>Door1</option>
           <option>Door2</option>
+        </select>
+      </div>
+      <!-- Bulk, Misc, Side, Back, and Recoup options represent storage areas -->
+      <div class="col-md">
+        <label class="form-label">Storage Location</label>
+        <select class="form-select">
           <option>Bulk 1</option>
           <option>Bulk 2</option>
           <option>Bulk 3</option>
